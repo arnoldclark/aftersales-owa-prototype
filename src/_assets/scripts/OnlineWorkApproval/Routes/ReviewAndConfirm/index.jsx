@@ -43,7 +43,7 @@ const ReviewAndConfirm = props => {
                 </div>
                 <div className="ch-display--flex ch-align-items--center ch-justify-content--between">
                   { renderStockChip(work) }
-                  <Link to={`/review-work/${work.id}`}>Edit part</Link>
+                  <Link to={`/review-work/${work.id}`} className="ch-fs--3">Edit part</Link>
                 </div>
               </li>
             ))}
@@ -62,8 +62,10 @@ const ReviewAndConfirm = props => {
         </div>
       </div>
 
-      <div className="owa-sticky-total ch-flex--none ch-bg--white ch-bt--1 ch-bc--grey-3 ch-pa--2">
-        <Link to={props.nextPage} className="ch-btn ch-btn--block ch-btn--success">Next: {props.nextPageDescription}</Link>
+      <div className="owa-sticky-total ch-flex--none ch-bg--white ch-bt--1 ch-bc--grey-3 ch-pv--2">
+        <div className="ch-container">
+          <Link to={props.nextPage} className="ch-btn ch-btn--block ch-btn--success">Next: {props.nextPageDescription}</Link>
+        </div>
       </div>
     </>
   );

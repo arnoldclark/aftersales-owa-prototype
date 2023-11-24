@@ -4,6 +4,7 @@ body {
 
 .ch-container {
   width: 100%;
+  max-width: 768px;
 }
 
 .ch-btn--block+.ch-btn--block {
