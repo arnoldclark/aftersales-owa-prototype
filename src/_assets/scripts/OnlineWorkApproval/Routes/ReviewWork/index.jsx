@@ -18,9 +18,8 @@ const ReviewWork = props => {
   const navigate = useNavigate();
 
   const validate = () => {
-    if(optionChosen) {
+    if(props.work.customerChoice > 0) {
       navigate(props.nextPage);
-      setOptionChosen(false);
       setValidationError(null);
     } else {
       setValidationError("Please choose an option before continuing.")
@@ -30,7 +29,6 @@ const ReviewWork = props => {
   const choosePart = (id, choice, price) => {
     props.setCustomerChoice(id, choice, price);
     setValidationError(null);
-    setOptionChosen(true);
   }
 
   return (
@@ -77,7 +75,6 @@ const ReviewWork = props => {
 
       <TotalCard totalPrice={props.totalPrice}>
         { validationError && <span className="ch-color--ac-red ch-fw--500 ch-display--block ch-text--center ch-mb--2 ch-fs--3">{validationError}</span> }
-        {/* <Link to={props.nextPage} className="ch-btn ch-btn--success ch-btn--block ch-mt--2">Next: {props.nextPageDescription}</Link> */}
         <button onClick={() => validate()} className="ch-btn ch-btn--success ch-btn--block">Next: {props.nextPageDescription}</button>
       </TotalCard>
     </>
