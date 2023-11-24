@@ -1,0 +1,58 @@
+body {
+  background-color: #FAFAFA;
+}
+
+.ch-container {
+  width: 100%;
+}
+
+.ch-btn--block+.ch-btn--block {
+  margin-top: 0px;
+}
+
+.ch-stepper__percentage {
+  right: 0;
+}
+
+.owa-container {
+  height: 100vh;
+}
+
+.owa-citnow-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+}
+
+.owa-citnow-video__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.owa-sticky-total {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.owa-part-selected {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.owa-total-price {
+  font-size: 20px;
+}
+
+.owa-approved-work,
+.owa-grand-total {
+  overflow: hidden;
+}
+
+.owa-approved-work__list li:last-child {
+  border-bottom: 0;
+}
