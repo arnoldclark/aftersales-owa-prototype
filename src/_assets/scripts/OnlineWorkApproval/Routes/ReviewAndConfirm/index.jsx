@@ -32,8 +32,8 @@ const ReviewAndConfirm = props => {
         <div className="ch-ba--1 ch-bc--grey-3 ch-shadow--md ch-bg--white ch-rounded owa-approved-work ch-mb--4">
           <h3 className="ch-bg--grey-1 ch-bb--1 ch-bc--grey-3 ch-pa--2 ch-fs--3 ch-mb--0 owa-approved-work__title">Work you've just approved</h3>
           <ul className="owa-approved-work__list">
-            { workToApprove.map((work, i) => (
-              <li key={i} className="ch-ph--2 ch-pv--3 ch-bb--1 ch-bc--grey-3">
+            { workToApprove.map((work, index) => (
+              <li key={index} className="ch-ph--2 ch-pv--3 ch-bb--1 ch-bc--grey-3">
                 <div className="ch-display--flex ch-align-items--center ch-justify-content--between ch-mb--1">
                   <span className="ch-fs--3">{work.subGroup} - {work.componentDescription}</span>
                   <span className="ch-fs--3 ch-fw--500">{ CurrencyPounds.format(work.customerChoicePrice) }</span>
@@ -41,7 +41,10 @@ const ReviewAndConfirm = props => {
                 <div className="ch-mb--1">
                   <span class="ch-fs--3">{work.cause} - {work.action}</span>
                 </div>
-                { renderStockChip(work) }
+                <div className="ch-display--flex ch-align-items--center ch-justify-content--between">
+                  { renderStockChip(work) }
+                  <Link to={`/review-work/${work.id}`}>Edit part</Link>
+                </div>
               </li>
             ))}
           </ul>
