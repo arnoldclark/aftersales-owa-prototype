@@ -263,10 +263,6 @@ class OnlineWorkApproval extends React.Component {
     const router = createBrowserRouter([
       {
         path: "/",
-        element: <Index />
-      },
-      {
-        path: "/summary-of-work",
         element: <SummaryOfWork progress={7.14} vehicle={this.state.vehicle} work={this.state.work} />
       },
       {
@@ -391,7 +387,7 @@ class OnlineWorkApproval extends React.Component {
           setCustomerChoice={this.setCustomerChoice}  
           totalPrice={totalPrice} 
           nextPage="/review-and-confirm/"
-          nextPageDescription="Next: Review and confirm" />
+          nextPageDescription="Review and confirm" />
       },
       {
         path: "/review-and-confirm",
