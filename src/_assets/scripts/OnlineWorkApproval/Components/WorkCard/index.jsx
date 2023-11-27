@@ -5,14 +5,14 @@ const WorkCard = props => {
   const Essential = () => (
     <>
       <span className="ch-text--uppercase ch-color--ac-red ch-fw--600 ch-fs--2">Essential</span>
-      <span className="ch-chip ch-chip--lg ch-chip--outline ch-chip--red ch-fw--600">MOT fail</span>
+      {/* <span className="ch-chip ch-chip--lg ch-chip--outline ch-chip--red ch-fw--600">MOT fail</span> */}
     </>
   );
 
   const Advisory = () => (
     <>
       <span className="ch-text--uppercase ch-color--ac-orange ch-fw--600 ch-fs--2">Advisory</span>
-      <span className="ch-chip ch-chip--lg ch-chip--outline ch-chip--orange ch-fw--600">MOT advisory</span>
+      {/* <span className="ch-chip ch-chip--lg ch-chip--outline ch-chip--orange ch-fw--600">MOT advisory</span> */}
     </>
   )
   return (
