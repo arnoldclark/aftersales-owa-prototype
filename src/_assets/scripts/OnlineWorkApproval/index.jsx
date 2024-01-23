@@ -32,14 +32,18 @@ class OnlineWorkApproval extends React.Component {
         action: "Remove and Install",
         cause: "Leak",
         reportCategory: "essential",
+        multipart: false,
+        partDescriptions: [],
         parts: {
           manufacturer: {
             price: 190.07,
-            inStock: true
+            inStock: true,
+            parts: []
           },
           autoparts: {
             price: 141.38,
-            inStock: true
+            inStock: true,
+            parts: []
           }
         },
         customerChoice: null,
@@ -47,194 +51,55 @@ class OnlineWorkApproval extends React.Component {
       },
       {
         id: 2,
-        area: "Underside",
-        group: "Steering",
-        subGroup: "Steering mechanism",
-        componentDescription: "Track rod end joint",
-        action: "Remove and Install",
-        cause: "Worn",
-        reportCategory: "essential",
-        parts: {
-          manufacturer: {
-            price: 84.99,
-            inStock: true
-          },
-          autoparts: {
-            price: 51.49,
-            inStock: true
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 3,
-        area: "Underside",
-        group: "Suspension",
-        subGroup: "Front suspension",
-        componentDescription: "Suspension lower arm, front",
-        action: "Remove and Install",
-        cause: "Split",
-        reportCategory: "essential",
-        parts: {
-          manufacturer: null,
-          autoparts: {
-            price: 145.73,
-            inStock: true
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 4,
-        area: "Underside",
-        group: "Suspension",
-        subGroup: "Front suspension",
-        componentDescription: "Anti-roll bar link - outer",
-        action: "Remove and Install",
-        cause: "Worn",
-        reportCategory: "essential",
-        parts: {
-        manufacturer: null,
-        autoparts: {
-          price: 32.15,
-          inStock: true
-        }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 5,
         area: "Brakes",
         group: "Brakes",
         subGroup: "Footbrakes",
-        componentDescription: "Front brake pads (all)",
+        componentDescription: "Front Brakes (pads & discs)",
         action: "Remove and Install",
         cause: "Worn",
-        reportCategory: "advisory",
-        parts: {
-          manufacturer: {
-            price: 90.59,
-            inStock: true
-          },
-          autoparts: {
-            price: 49.09,
-            inStock: false,
-            inStockDate: "6th December"
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 6,
-        area: "Brakes",
-        group: "Brakes",
-        subGroup: "Footbrakes",
-        componentDescription: "Front brake disc (both)",
-        action: "Remove and Install",
-        cause: "Worn",
-        reportCategory: "advisory",
-        parts: {
-          manufacturer: {
-            price: 65.99,
-            inStock: true
-          },
-          autoparts: {
-            price: 35.91,
-            inStock: true
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 7,
-        area: "Brakes",
-        group: "Brakes",
-        subGroup: "Footbrakes",
-        componentDescription: "Rear brake pads (all)",
-        action: "Remove and Install",
-        cause: "Worn",
-        reportCategory: "advisory",
-        parts: {
-          manufacturer: {
-            price: 65.49,
-            inStock: true
-          },
-          autoparts: {
-            price: 62.49,
-            inStock: true
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 8,
-        area: "Brakes",
-        group: "Brakes",
-        subGroup: "Footbrakes",
-        componentDescription: "Rear brake disc (both)",
-        action: "Remove and Install",
-        cause: "Worn",
-        reportCategory: "advisory",
-        parts: {
-          manufacturer: {
-            price: 109.99,
-            inStock: true
-          },
-          autoparts: {
-            price: 73.88,
-            inStock: true
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 9,
-        area: "Underside",
-        group: "Suspension",
-        subGroup: "Front suspension",
-        componentDescription: "Road spring",
-        action: "Remove and Install",
-        cause: "Broken",
         reportCategory: "essential",
+        multipart: true,
+        partDescriptions: [
+          "Brake pads (front)",
+          "Brake discs (front)",
+          "Brake calipers"
+        ],
         parts: {
           manufacturer: {
-            price: 148.19,
-            inStock: true
+            price: 210.00,
+            inStock: true,
+            parts:  [
+              {
+                description: "Brake pads (front)",
+                price: 98.00
+              }, 
+              {
+                description: "Brake discs (front)",
+                price: 51.00
+              },
+              {
+                description: "Brake calipers",
+                price: 70.00
+              }
+            ],
           },
           autoparts: {
-            price: 128.18,
-            inStock: false,
-            inStockDate: "12th December"
-          }
-        },
-        customerChoice: null,
-        customerChoicePrice: 0
-      },
-      {
-        id: 10,
-        area: "Underside",
-        group: "Suspension",
-        subGroup: "Rear suspension",
-        componentDescription: "Road spring",
-        action: "Remove and Install",
-        cause: "Broken",
-        reportCategory: "essential",
-        parts: {
-          manufacturer: {
-            price: 91.93,
-            inStock: true
-          },
-          autoparts: {
-            price: 85,
-            inStock: false,
-            inStockDate: "12th December"
+            price: 174.00,
+            inStock: true,
+            parts:  [
+              {
+                description: "Brake pads (front)",
+                price: 80.00
+              }, 
+              {
+                description: "Brake discs (front)",
+                price: 44.00
+              },
+              {
+                description: "Brake calipers",
+                price: 50.00
+              }
+            ],
           }
         },
         customerChoice: null,
@@ -276,6 +141,8 @@ class OnlineWorkApproval extends React.Component {
           vehicle={this.state.vehicle} 
           work={this.state.work[0]}
           parts={this.state.work[0].parts}
+          partDescriptions={this.state.work[0].partDescriptions}
+          multiline={this.state.work[0].multiline}
           setCustomerChoice={this.setCustomerChoice}  
           totalPrice={totalPrice} 
           nextPage="/review-work/2"
@@ -284,110 +151,16 @@ class OnlineWorkApproval extends React.Component {
       {
         path: "/review-work/2",
         element: <ReviewWork 
-          progress={21.42}
+          progress={14.28}
           vehicle={this.state.vehicle} 
           work={this.state.work[1]}
           parts={this.state.work[1].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/3"
-          nextPageDescription={this.state.work[2].subGroup} />
-      },
-      {
-        path: "/review-work/3",
-        element: <ReviewWork 
-          progress={28.56}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[2]}
-          parts={this.state.work[2].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/4"
-          nextPageDescription={this.state.work[3].subGroup} />
-      },
-      {
-        path: "/review-work/4",
-        element: <ReviewWork
-          progress={35.70}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[3]}
-          parts={this.state.work[3].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/5"
-          nextPageDescription={this.state.work[4].subGroup} />
-      },
-      {
-        path: "/review-work/5",
-        element: <ReviewWork 
-          progress={42.84}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[4]}
-          parts={this.state.work[4].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/6"
-          nextPageDescription={this.state.work[5].subGroup} />
-      },
-      {
-        path: "/review-work/6",
-        element: <ReviewWork 
-          progress={49.98}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[5]}
-          parts={this.state.work[5].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/7"
-          nextPageDescription={this.state.work[6].subGroup} />
-      },
-      {
-        path: "/review-work/7",
-        element: <ReviewWork 
-          progress={57.12}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[6]}
-          parts={this.state.work[6].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/8"
-          nextPageDescription={this.state.work[7].subGroup} />
-      },
-      {
-        path: "/review-work/8",
-        element: <ReviewWork 
-          progress={64.26}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[7]}
-          parts={this.state.work[7].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/9"
-          nextPageDescription={this.state.work[8].subGroup} />
-      },
-      {
-        path: "/review-work/9",
-        element: <ReviewWork 
-          progress={71.40}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[8]}
-          parts={this.state.work[8].parts}
-          setCustomerChoice={this.setCustomerChoice}  
-          totalPrice={totalPrice} 
-          nextPage="/review-work/10"
-          nextPageDescription={this.state.work[9].subGroup} />
-      },
-      {
-        path: "/review-work/10",
-        element: <ReviewWork 
-          progress={78.54}
-          vehicle={this.state.vehicle} 
-          work={this.state.work[9]}
-          parts={this.state.work[9].parts}
+          partDescriptions={this.state.work[1].partDescriptions}
+          multiline={this.state.work[1].multiline}
           setCustomerChoice={this.setCustomerChoice}  
           totalPrice={totalPrice} 
           nextPage="/review-and-confirm/"
-          nextPageDescription="Review and confirm" />
+          nextPageDescription="Next: Review and confirm" />
       },
       {
         path: "/review-and-confirm",

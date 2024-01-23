@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../../Card';
 
 const ManufacturerPartCard = props => {
@@ -7,11 +7,28 @@ const ManufacturerPartCard = props => {
     currency: 'GBP'
   });
 
+  const parts = props.part.parts;
+
+  const [showParts, setShowParts] = useState(false);
+
   return (
     <Card className={props.className}>
       <h3 className="ch-mb--1 ch-fs--4">{props.vehicle.manufacturer} recommended</h3>
       <span className="ch-display--block ch-fs--2 ch-mb--1">Parts recommended by {props.vehicle.manufacturer}</span>
-      <span className="ch-display--block ch-mb--1 ch-fs--4 ch-color--ac-pricing ch-fw--500">{CurrencyPounds.format(props.part.price)}</span>
+      <div className="ch-display--flex ch-justify-content--between ch-align-items--center ch-mb--1">
+        <span className="ch-display--block ch-fs--4 ch-color--ac-pricing ch-fw--500">{CurrencyPounds.format(props.part.price)}</span>
+        { parts.length > 0 && <button className="ch-btn ch-btn--link ch-pa--0" onClick={() => setShowParts(!showParts)}>{ showParts ? "Hide parts" : "Show parts" }</button>}
+      </div>
+      { parts.length > 0 && showParts &&
+        <ul className="ch-mb--2">
+          { parts.map((part, index) => 
+            <li className={`ch-display--flex ch-justify-content--between ch-align-items--center ch-pa--2 ${index % 2 ? `ch-bg--grey-1` : `ch-bg--grey-2`}`}>
+              <span>{part.description}</span>
+              <span className="ch-color--ac-pricing ch-fw--500">{CurrencyPounds.format(part.price)}</span>
+            </li>
+          ) }
+        </ul>
+      }
       <div className="ch-rounded ch-bg--grey-1 ch-ba--1 ch-bc--grey-2 ch-pa--2 ch-mb--2">
         <div className="ch-display--flex ch-align-items--center ch-text--center ch-centered ch-mb--1">
           { props.part.inStock ? <img src="/images/icon-tick-contained.svg" width="18" height="18" className="ch-mr--1" alt="tick icon" /> : <img src="/images/icon-calendar.svg" width="18" height="18" className="ch-mr--1" alt="calendar icon" /> }

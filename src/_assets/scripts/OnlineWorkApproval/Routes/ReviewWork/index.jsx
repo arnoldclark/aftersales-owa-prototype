@@ -39,11 +39,12 @@ const ReviewWork = props => {
         <WorkCard 
           className="ch-mb--4" 
           type={props.work.reportCategory} 
-          group={props.work.group} 
+          group={props.work.group}
           subGroup={props.work.subGroup} 
           component={props.work.componentDescription} 
           cause={props.work.cause} 
-          action={props.work.action} />
+          action={props.work.action}
+          partDescriptions={props.partDescriptions} />
 
         <h2 className="ch-mb--2">Choose your parts</h2>
 

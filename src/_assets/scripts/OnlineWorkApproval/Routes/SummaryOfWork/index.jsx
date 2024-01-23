@@ -26,8 +26,8 @@ const SummaryOfWork = props => {
         <h2 className="ch-mt--4 ch-fs--4 ch-mb--1">Work for you to approve</h2>
         <p className="ch-fs--3">Here's what we found during our checks</p>
   
-        <SummaryCard type="essential" work={essentialWork} className="ch-mb--3" />
-        <SummaryCard type="advisory" work={advisoryWork} />
+        { essentialWork.length > 0 && <SummaryCard type="essential" work={essentialWork} className="ch-mb--3" />}
+        { advisoryWork.legnth > 0 && <SummaryCard type="advisory" work={advisoryWork} /> }
   
         <hr className="ch-mt--4 ch-mb--3 ch-bg--grey-3" />
   
