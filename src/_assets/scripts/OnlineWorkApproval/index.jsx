@@ -128,7 +128,7 @@ class OnlineWorkApproval extends React.Component {
     const router = createBrowserRouter([
       {
         path: "/",
-        element: <SummaryOfWork progress={7.14} vehicle={this.state.vehicle} work={this.state.work} />
+        element: <SummaryOfWork progress={16.7} vehicle={this.state.vehicle} work={this.state.work} />
       },
       {
         path: "/summary-of-work/whats-checked",
@@ -137,7 +137,7 @@ class OnlineWorkApproval extends React.Component {
       {
         path: "/review-work/1",
         element: <ReviewWork 
-          progress={14.28}
+          progress={33.4}
           vehicle={this.state.vehicle} 
           work={this.state.work[0]}
           parts={this.state.work[0].parts}
@@ -151,7 +151,7 @@ class OnlineWorkApproval extends React.Component {
       {
         path: "/review-work/2",
         element: <ReviewWork 
-          progress={14.28}
+          progress={50.1}
           vehicle={this.state.vehicle} 
           work={this.state.work[1]}
           parts={this.state.work[1].parts}
@@ -165,7 +165,7 @@ class OnlineWorkApproval extends React.Component {
       {
         path: "/review-and-confirm",
         element: <ReviewAndConfirm
-          progress={85.68}
+          progress={66.8}
           work={this.state.work}
           totalPrice={totalPrice}
           nextPage="/payment-options"
@@ -174,7 +174,7 @@ class OnlineWorkApproval extends React.Component {
       {
         path: "/payment-options",
         element: <PaymentOptions
-          progress={92.84}
+          progress={83.5}
           nextPage="/thank-you"
           />
       },
