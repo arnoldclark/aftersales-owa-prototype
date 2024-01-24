@@ -57,3 +57,7 @@ body {
 .owa-approved-work__list li:last-child {
   border-bottom: 0;
 }
+
+.owa-multipart {
+  border-radius: 0px 0px 3px 3px;
+}
